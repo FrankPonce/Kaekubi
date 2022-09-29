@@ -1,18 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/black"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/kaekubi_title_kr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="개구비 앱"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        android:fontFamily="monospace"
+        android:layout_centerHorizontal="true"
+        android:padding="10dp"
+        android:textColor="@color/color4"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/kaekubi_title_eng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="KAEKUBI"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:fontFamily="monospace"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/kaekubi_title_kr"
+        android:textColor="@color/color4"/>
+
+    <Button
+        android:id="@+id/notes_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/pdf_button"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="6dp"
+        android:backgroundTint="@color/color4"
+        android:text="NOTES"
+        app:iconTint="#FFFFFF"
+        android:textColor="@color/black"
+        tools:layout_editor_absoluteX="158dp"
+        tools:layout_editor_absoluteY="256dp" />
+
+    <Button
+        android:id="@+id/pdf_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="6dp"
+        android:backgroundTint="@color/color4"
+        android:text="FILES"
+        app:iconTint="#FFFFFF"
+        android:textColor="@color/black"
+        tools:layout_editor_absoluteX="158dp"
+        tools:layout_editor_absoluteY="256dp" />
+
+    <Button
+        android:id="@+id/flashcards_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/pdf_button"
+        android:layout_margin="6dp"
+        android:backgroundTint="@color/color4"
+        android:text="FLASHCARDS"
+        app:iconTint="#FFFFFF"
+        android:textColor="@color/black"
+        tools:layout_editor_absoluteX="158dp"
+        tools:layout_editor_absoluteY="256dp" />
+
+</RelativeLayout>
