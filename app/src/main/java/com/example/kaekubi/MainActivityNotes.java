@@ -15,6 +15,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 
 import com.example.kaekubi.adapters.NotesListAdapter;
 import com.example.kaekubi.database.RoomDB;
@@ -52,6 +53,8 @@ import java.util.List;
                 startActivityForResult(intent, 101);
             }
         });
+
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
 
      @Override
