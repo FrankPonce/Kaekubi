@@ -1,5 +1,9 @@
  package com.example.kaekubi;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -54,10 +58,11 @@ import java.util.List;
      protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
          super.onActivityResult(requestCode, resultCode, data);
 
-         if (resultCode == 101) {
+         if (requestCode == 101) {
              if (resultCode == Activity.RESULT_OK) {
-                 Notes  new_notes = (Notes) data.getSerializableExtra("note");
+                 Notes new_notes = (Notes) data.getSerializableExtra("note");
                  database.mainDAO().insert(new_notes);
+                 notes.clear();
                  notes.addAll(database.mainDAO().getAll());
                  notesListAdapter.notifyDataSetChanged();
              }
